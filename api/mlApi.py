@@ -11,7 +11,7 @@ labels = {
 }
 
 
-@mlApi.route("/predict")
+@mlApi.route("/predict",methods=['POST'])
 def predict():
     data = request.get_json()
     print(data)
