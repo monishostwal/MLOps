@@ -33,7 +33,7 @@ def greet():
 def hello_world():
     html = generate_html(greet())
     return html
-    
+
 @app.route('/flowers/predict')
 def check():
     data = request.get_json()
@@ -44,6 +44,11 @@ def check():
     predictions = model.predict(data)
     print(predictions)
     return jsonify(labels[predictions[0]])
+
+def test_model_output():
+    predictions = model.predict([[1,2,3,4]])
+
+    return labels[predictions[0]]
 
 
 if __name__ == '__main__':

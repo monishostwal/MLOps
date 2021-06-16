@@ -16,9 +16,7 @@ class TestHelloWorld(unittest.TestCase):
         self.assertEqual(hello_world.greet(), greeting)
 
     def test_model_predictions(self):
-        self.assertEqual(
- requests.get('http://127.0.0.1:5000/flowers/predict',json= {
-"feature":[1,2,3,4]}).json(),"virginica")
+        self.assertEqual(hello_world.test_model_output(),"virginica")
 
 if __name__ == '__main__':
     unittest.main()
