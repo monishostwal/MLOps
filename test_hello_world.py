@@ -13,12 +13,6 @@ class TestHelloWorld(unittest.TestCase):
 
         self.assertEqual(response.json, 'virginica')
     
-    def test_greeting_message(self):
-        greeting = 'Welcome to CI/CD'
-        self.assertEqual(hello_world.greet(), greeting)
-
-    def test_model_predictions(self):
-        self.assertEqual(hello_world.test_model_output(),"virginica")
 
 if __name__ == '__main__':
     unittest.main()
