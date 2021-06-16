@@ -1,11 +1,11 @@
-# import app
+import views
 import unittest
 
 class TestHelloWorld(unittest.TestCase):
 
-    # def setUp(self):
-    #     self.app = app.app.test_client()
-    #     self.app.testing = True
+    def setUp(self):
+        self.views = views.app.test_client()
+        self.views.testing = True
 
     # def test_status_code(self):
     #     response = self.app.get('/')
