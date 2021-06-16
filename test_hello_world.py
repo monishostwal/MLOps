@@ -8,8 +8,10 @@ class TestHelloWorld(unittest.TestCase):
         self.app.testing = True
 
     def test_status_code(self):
-        response = self.app.get('/')
-        self.assertEqual(response.status_code, 200)
+        response = self.app.get('/flowers/predict',json= {
+"feature":[1,2,3,4]})
+
+        self.assertEqual(response.json, 'virginica')
     
     def test_greeting_message(self):
         greeting = 'Welcome to CI/CD'
