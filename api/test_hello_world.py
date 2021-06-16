@@ -7,9 +7,9 @@ class TestHelloWorld(unittest.TestCase):
         self.views = views.app.test_client()
         self.views.testing = True
 
-    # def test_status_code(self):
-    #     response = self.app.get('/')
-    #     self.assertEqual(response.status_code, 200)
+    def test_status_code(self):
+        response = self.views.get('/')
+        self.assertEqual(response.status_code, 200)
     
     def test_greeting_message(self):
         greeting = 'OK'
