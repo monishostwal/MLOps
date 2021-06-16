@@ -1,7 +1,6 @@
 version: 2.1
 jobs:
   run_tests:
-    working_directory: ~/project
     docker:
       - image: circleci/python:3.7.4
     steps:
@@ -14,7 +13,7 @@ jobs:
       - run:
           name: Run unit tests
           command: |
-            python -m pytest
+            pytest --junitxml=test-reports/junit.xml --html=test-reports/pytest_report.html --self-contained-html
       - store_test_results:
           path: test-reports
       - store_artifacts:
@@ -23,3 +22,4 @@ workflows:
   build_test:
     jobs:
       - run_tests
+      

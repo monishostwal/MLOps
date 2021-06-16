@@ -1,11 +1,10 @@
-import views
+import hello_world
 import unittest
-import sys
 
 class TestHelloWorld(unittest.TestCase):
 
     def setUp(self):
-        self.app = views.app.test_client()
+        self.app = hello_world.app.test_client()
         self.app.testing = True
 
     def test_status_code(self):
@@ -13,8 +12,8 @@ class TestHelloWorld(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
     
     def test_greeting_message(self):
-        greeting = 'OK'
-        self.assertEqual('OK', greeting)
+        greeting = 'Welcome to CI/CD'
+        self.assertEqual(hello_world.greet(), greeting)
 
 if __name__ == '__main__':
     unittest.main()
