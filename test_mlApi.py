@@ -1,4 +1,4 @@
-import mlApi
+import app
 import unittest
 import requests
 
@@ -6,7 +6,7 @@ import requests
 class TestHelloWorld(unittest.TestCase):
 
     def setUp(self):
-        self.app = mlApi.app.test_client()
+        self.app = app.app.test_client()
         self.app.testing = True
 
     def test_status_code(self):
