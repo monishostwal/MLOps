@@ -15,10 +15,9 @@ labels = {
 def check():
     model = train_model.train_model_flower()
     data = request.get_json()
-    print(data)
+    print("Data received : "+str(data))
     data = numpy.array(data['feature'])
     data = data.reshape(1, -1)
-    print(data)
     predictions = model.predict(data)
     print(predictions)
     return jsonify(labels[predictions[0]])
